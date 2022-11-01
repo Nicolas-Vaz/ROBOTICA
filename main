@@ -1,0 +1,75 @@
+void setup()
+{
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(A5, INPUT);
+  pinMode(A4, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(A2, INPUT);
+  pinMode(A1, INPUT);
+}
+
+void loop()
+{
+  
+  //RETA
+  if (digitalRead(A1)==0 && digitalRead(A2)==0 && digitalRead(A3)==1 && digitalRead(A4)==0 && digitalRead(A5)==0 ) {
+    analogWrite(5, 90);
+    digitalWrite(6, LOW);
+    analogWrite(9, 90);
+    digitalWrite(10, LOW);
+  }
+  //CURVA PESADA ESQUERDA
+  if (digitalRead(A1)==0 && digitalRead(A2)==1 && digitalRead(A3)==0 && digitalRead(A4)==0 && digitalRead(A5)==0 ) {
+    analogWrite(5, 90);//120
+    digitalWrite(6, LOW);
+    analogWrite(9, 55);
+    digitalWrite(10, LOW);
+  }
+//CURVA PESADA DIREITA
+  if (digitalRead(A1)==0 && digitalRead(A2)==0 && digitalRead(A3)==0 && digitalRead(A4)==1 && digitalRead(A5)==0 ) {
+    analogWrite(5, 55);//120
+    digitalWrite(6, LOW);
+    analogWrite(9, 90);
+    digitalWrite(10, LOW);
+  }
+  //curva lenta ESQUERDA
+  if(digitalRead(A1)==0 && digitalRead(A2)==1 && digitalRead(A3)==1 && digitalRead(A4)==0 && digitalRead(A5)==0 ){
+    analogWrite(5, 70);//120
+    digitalWrite(6, LOW);
+    analogWrite(9, 55);
+    digitalWrite(10, LOW);
+    }  
+//curva lenta    DIREITA
+  if(digitalRead(A1)==0 && digitalRead(A2)==0 && digitalRead(A3)==1 && digitalRead(A4)==1 && digitalRead(A5)==0 ){
+    analogWrite(5, 55);//120
+    digitalWrite(6, LOW);
+    analogWrite(9, 70);
+    digitalWrite(10, LOW);
+    }
+  //SUPER CURVA ESQUERDA
+  if (digitalRead(A1)==1 && digitalRead(A2)==0 && digitalRead(A3)==0 && digitalRead(A4)==0 && digitalRead(A5)==0 ) {
+    analogWrite(5, 100);
+    digitalWrite(6, LOW);
+    analogWrite(9, 0);
+    digitalWrite(10, LOW);
+  }
+  //SUPER CURVA DIREITA
+  if (digitalRead(A1)==0 && digitalRead(A2)==0 && digitalRead(A3)==0 && digitalRead(A4)==0 && digitalRead(A5)==1 ) {
+    analogWrite(5, 0);
+    digitalWrite(6, LOW);
+    analogWrite(9, 100);
+    digitalWrite(10, LOW);
+  } 
+  //RODADINHA
+  if (digitalRead(A1)==0 && digitalRead(A2)==0 && digitalRead(A3)==0 && digitalRead(A4)==0 && digitalRead(A5)==0 ) {
+    analogWrite(5, 40);
+    digitalWrite(6, HIGH);
+    analogWrite(9, 120);
+    digitalWrite(10, LOW);
+  } 
+
+ //
+}
